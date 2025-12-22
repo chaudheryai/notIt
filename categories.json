@@ -108,5 +108,281 @@
     "Block","Report","Live Stream","Algorithm","Trending","Viral","Meme","Hashtag",
     "Influencer","Subscriber","Notification","FYP","Ratio","Cap","No Cap","Sus",
     "GOAT","Cringe","Based","Touch Grass","NPC"
+  ],
+    "Movies (Action)": [
+    "Die Hard","John Wick","Mad Max","The Dark Knight","Mission Impossible",
+    "Fast & Furious","Gladiator","300","The Bourne Identity","Casino Royale",
+    "Skyfall","The Matrix","Terminator","Predator","Top Gun","Top Gun Maverick",
+    "Rambo","Lethal Weapon","Heat","Speed","Taken","Extraction","Edge of Tomorrow",
+    "War of the Worlds","World War Z","I Am Legend","Pacific Rim","Transformers"
+  ],
+
+  "Movies (Comedy)": [
+    "Superbad","Step Brothers","The Hangover","21 Jump Street","22 Jump Street",
+    "Anchorman","Talladega Nights","The Other Guys","Dumb and Dumber","Ace Ventura",
+    "Bridesmaids","Mean Girls","Napoleon Dynamite","Zoolander","Ted","The Mask",
+    "Austin Powers","Rush Hour","Friday","Scary Movie","White Chicks","We're the Millers"
+  ],
+
+  "Movies (Horror)": [
+    "The Conjuring","Insidious","Sinister","Hereditary","The Exorcist",
+    "The Ring","It","It Chapter Two","Scream","Halloween","Friday the 13th",
+    "Nightmare on Elm Street","The Texas Chainsaw Massacre","The Nun",
+    "Annabelle","The Babadook","Paranormal Activity","The Grudge",
+    "Saw","Hostel","Get Out","Us","Smile","Talk to Me"
+  ],
+
+  "Movies (Sci-Fi)": [
+    "Interstellar","Inception","Arrival","Blade Runner","Blade Runner 2049",
+    "Dune","Dune Part Two","Star Wars","Rogue One","The Empire Strikes Back",
+    "Alien","Aliens","Prometheus","Avatar","Avatar The Way of Water",
+    "District 9","Ex Machina","Minority Report","Looper","Elysium",
+    "Gravity","Moon","Tenet","Edge of Tomorrow"
+  ],
+
+  "TV Shows (Drama)": [
+    "Breaking Bad","Better Call Saul","Game of Thrones","House of the Dragon",
+    "The Sopranos","The Wire","Succession","Ozark","Narcos","Peaky Blinders",
+    "The Crown","Mad Men","Yellowstone","Euphoria","The Bear",
+    "Snowfall","Power","Empire","House","Grey's Anatomy","Suits","Billions"
+  ],
+
+  "TV Shows (Comedy)": [
+    "The Office","Parks and Recreation","Brooklyn Nine-Nine","Friends",
+    "How I Met Your Mother","Modern Family","Community","Arrested Development",
+    "New Girl","The Big Bang Theory","Seinfeld","Curb Your Enthusiasm",
+    "It's Always Sunny","Schitt's Creek","Ted Lasso","Silicon Valley",
+    "Scrubs","That 70s Show","Two and a Half Men"
+  ],
+
+  "Anime (Shonen)": [
+    "Naruto","Naruto Shippuden","One Piece","Bleach","Dragon Ball Z",
+    "Dragon Ball Super","Attack on Titan","Demon Slayer","Jujutsu Kaisen",
+    "My Hero Academia","Black Clover","Chainsaw Man","Hunter x Hunter",
+    "Fairy Tail","Fire Force","Blue Exorcist","Mob Psycho","One Punch Man",
+    "Tokyo Ghoul","Boruto"
+  ],
+
+  "Anime (Seinen)": [
+    "Death Note","Tokyo Ghoul","Parasyte","Berserk","Vinland Saga",
+    "Steins Gate","Monster","Ergo Proxy","Psycho-Pass","Akira",
+    "Ghost in the Shell","Devilman Crybaby","Cowboy Bebop",
+    "Samurai Champloo","Serial Experiments Lain","Perfect Blue"
+  ],
+
+  "Video Games (FPS)": [
+    "Call of Duty","Warzone","Modern Warfare","Black Ops","Battlefield",
+    "Counter-Strike","CS2","Valorant","Rainbow Six Siege","Halo",
+    "Apex Legends","Overwatch","Doom","Escape from Tarkov",
+    "PUBG","Titanfall","Destiny","Far Cry","Insurgency","Splitgate"
+  ],
+
+  "Video Games (Open World)": [
+    "GTA V","Red Dead Redemption 2","Skyrim","Elden Ring",
+    "The Witcher 3","Cyberpunk 2077","Zelda Breath of the Wild",
+    "Zelda Tears of the Kingdom","Fallout 4","Assassin's Creed",
+    "Horizon Zero Dawn","Horizon Forbidden West","Ghost of Tsushima",
+    "Far Cry 5","Watch Dogs","Saints Row","Just Cause"
+  ],
+
+  "Music Artists (Hip Hop)": [
+    "Drake","Kanye West","J Cole","Kendrick Lamar","Travis Scott",
+    "Future","Lil Wayne","Jay Z","Nas","Eminem","21 Savage",
+    "Metro Boomin","Playboi Carti","Lil Uzi Vert","A$AP Rocky",
+    "Nicki Minaj","Doja Cat","Cardi B","Tyler the Creator"
+  ],
+
+  "Music Artists (Pop)": [
+    "Taylor Swift","Ariana Grande","Billie Eilish","Olivia Rodrigo",
+    "Dua Lipa","The Weeknd","Justin Bieber","Harry Styles",
+    "Ed Sheeran","Rihanna","Lady Gaga","Katy Perry",
+    "Miley Cyrus","Sabrina Carpenter","Selena Gomez","Shawn Mendes"
+  ],
+
+  "Music Genres": [
+    "Hip Hop","Pop","Rock","Jazz","Classical","EDM","House",
+    "Techno","Trap","Drill","Lo-Fi","Indie","Alternative",
+    "Metal","Country","Reggae","Afrobeats","K-Pop",
+    "Bollywood","Latin","Salsa","Bachata"
+  ],
+
+  "YouTube Content Types": [
+    "Vlog","Prank","Challenge","Reaction","Podcast",
+    "Gaming Video","Walkthrough","Tutorial","Review",
+    "Unboxing","Storytime","Documentary","Shorts",
+    "Livestream","Commentary","Essay Video",
+    "Explainer","Compilation","Highlight Reel"
+  ],
+
+  "Streaming Platforms": [
+    "Netflix","Hulu","Amazon Prime Video","Disney Plus",
+    "HBO Max","Apple TV Plus","YouTube","Twitch",
+    "Kick","Crunchyroll","Funimation","Peacock",
+    "Paramount Plus","ESPN Plus"
+  ],
+
+  "Social Media Platforms": [
+    "Instagram","TikTok","Snapchat","Twitter","X",
+    "Facebook","YouTube","Discord","Reddit",
+    "Pinterest","LinkedIn","BeReal","Threads",
+    "WhatsApp","Telegram","Signal"
+  ],
+
+  "Memes & Internet Culture": [
+    "Distracted Boyfriend","Drake Meme","NPC Stream",
+    "Ohio Meme","Skull Emoji","Side Eye","Rizz",
+    "Fanum Tax","Gyatt","Based","Cringe","Mid",
+    "Ratio","Touch Grass","IYKYK","Main Character",
+    "Soft Launch","Hard Launch","Unhinged"
+  ],
+
+    "Movies (Thriller)": [
+    "Se7en","Gone Girl","Prisoners","Zodiac","Shutter Island",
+    "The Silence of the Lambs","Nightcrawler","The Prestige",
+    "The Usual Suspects","Memento","Black Swan","No Country for Old Men",
+    "Enemy","The Sixth Sense","Oldboy","A Quiet Place",
+    "The Girl with the Dragon Tattoo","The Departed","Argo","Sicario"
+  ],
+
+  "Movies (Romance)": [
+    "The Notebook","Titanic","La La Land","Pride and Prejudice",
+    "Before Sunrise","Before Sunset","The Fault in Our Stars",
+    "500 Days of Summer","Crazy Rich Asians","Love Actually",
+    "Call Me By Your Name","A Star Is Born","Her",
+    "Blue Valentine","Eternal Sunshine of the Spotless Mind",
+    "Me Before You","Notting Hill","Sleepless in Seattle"
+  ],
+
+  "Movies (Animated)": [
+    "Toy Story","Finding Nemo","The Incredibles","Up",
+    "Inside Out","Wall-E","Ratatouille","Monsters Inc",
+    "Cars","Shrek","Kung Fu Panda","How to Train Your Dragon",
+    "Frozen","Frozen II","Moana","Zootopia",
+    "The Lion King","Aladdin","Coco","Spirited Away"
+  ],
+
+  "TV Shows (Crime)": [
+    "Breaking Bad","Better Call Saul","Mindhunter","True Detective",
+    "Dexter","The Wire","Narcos","Ozark",
+    "Fargo","The Night Of","Snowfall","Power",
+    "Peaky Blinders","Money Heist","Lupin","Bosch",
+    "Jack Ryan","The Lincoln Lawyer","Banshee"
+  ],
+
+  "TV Shows (Reality)": [
+    "Survivor","Big Brother","Love Island","The Bachelor",
+    "The Bachelorette","Keeping Up with the Kardashians",
+    "Too Hot to Handle","The Circle","MasterChef",
+    "Hell's Kitchen","Kitchen Nightmares","America's Got Talent",
+    "The Voice","Shark Tank","Project Runway","RuPaul's Drag Race"
+  ],
+
+  "Anime (Romance)": [
+    "Your Name","A Silent Voice","Toradora",
+    "Clannad","Clannad After Story","Horimiya",
+    "Your Lie in April","Weathering With You",
+    "I Want to Eat Your Pancreas","Fruits Basket",
+    "Anohana","Nana","Golden Time","My Dress-Up Darling"
+  ],
+
+  "Anime (Sports)": [
+    "Haikyuu","Blue Lock","Kuroko no Basket",
+    "Ace of Diamond","Free","Yuri on Ice",
+    "Hajime no Ippo","Slam Dunk","Ping Pong the Animation",
+    "Sk8 the Infinity","Run with the Wind"
+  ],
+
+  "Video Games (RPG)": [
+    "Final Fantasy","Final Fantasy VII","Final Fantasy X",
+    "Skyrim","Elden Ring","Dark Souls",
+    "The Witcher 3","Mass Effect",
+    "Dragon Age","Persona 5","Persona 4",
+    "Octopath Traveler","Baldur's Gate",
+    "Divinity Original Sin","Chrono Trigger"
+  ],
+
+  "Video Games (Indie)": [
+    "Hollow Knight","Celeste","Dead Cells",
+    "Undertale","Cuphead","Limbo",
+    "Inside","Hades","Stardew Valley",
+    "Terraria","Slay the Spire",
+    "Papers Please","Katana Zero","Fez"
+  ],
+
+  "Music Artists (Rock)": [
+    "Queen","Linkin Park","Nirvana","Foo Fighters",
+    "Red Hot Chili Peppers","Metallica","Green Day",
+    "Arctic Monkeys","The Beatles","Pink Floyd",
+    "Led Zeppelin","Radiohead","Muse",
+    "Imagine Dragons","AC/DC","The Rolling Stones"
+  ],
+
+  "Music Artists (R&B)": [
+    "The Weeknd","Frank Ocean","Brent Faiyaz",
+    "SZA","Summer Walker","H.E.R.",
+    "Giveon","Daniel Caesar","PARTYNEXTDOOR",
+    "Usher","Chris Brown","Miguel",
+    "Alicia Keys","Bryson Tiller"
+  ],
+
+  "Albums (Iconic)": [
+    "Thriller","The Dark Side of the Moon",
+    "Abbey Road","To Pimp a Butterfly",
+    "Good Kid Maad City","Take Care",
+    "Graduation","Blonde","1989",
+    "Back in Black","Nevermind",
+    "DAMN.","Astroworld","After Hours"
+  ],
+
+  "Video Game Consoles": [
+    "PlayStation 5","PlayStation 4","PlayStation 3",
+    "Xbox Series X","Xbox One","Xbox 360",
+    "Nintendo Switch","Nintendo Wii",
+    "Nintendo GameCube","Nintendo 64",
+    "PlayStation 2","PlayStation 1"
+  ],
+
+  "YouTube Creators (Gaming)": [
+    "MrBeast Gaming","PewDiePie",
+    "Markiplier","Jacksepticeye",
+    "Valkyrae","Ninja","Pokimane",
+    "xQc","Dream","Technoblade",
+    "TommyInnit","Ludwig","MoistCr1TiKaL"
+  ],
+
+  "YouTube Creators (General)": [
+    "MrBeast","Casey Neistat",
+    "Logan Paul","KSI",
+    "Emma Chamberlain","Yes Theory",
+    "Sidemen","Beta Squad",
+    "H3 Podcast","Kurzgesagt",
+    "Veritasium","Vsauce","Ryan Trahan"
+  ],
+
+  "Podcast Types": [
+    "True Crime Podcast","Comedy Podcast",
+    "Interview Podcast","Educational Podcast",
+    "Business Podcast","Self-Help Podcast",
+    "Sports Podcast","News Podcast",
+    "Storytelling Podcast","Tech Podcast"
+  ],
+
+  "Streaming Genres": [
+    "True Crime","Docuseries",
+    "Limited Series","Mini-Series",
+    "Binge Watch","Weekly Release",
+    "Reality TV","Anime Streaming",
+    "Live Sports","Esports"
+  ],
+
+  "Internet Trends": [
+    "Ice Bucket Challenge","Mannequin Challenge",
+    "Harlem Shake","Bottle Flip",
+    "TikTok Dance","NPC Lives",
+    "ASMR","Mukbang",
+    "Unboxing Trend","Reaction Videos",
+    "Storytime","Viral Challenges"
   ]
+
+
 }
