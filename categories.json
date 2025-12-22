@@ -885,7 +885,180 @@
   "Famous Quotes Starters (generic)": [
     "Believe","Imagine","Remember","Never","Always","Sometimes","Today","Tomorrow","Freedom","Courage",
     "Wisdom","Patience","Hope","Discipline","Kindness","Truth","Change","Dream","Focus","Respect"
+  ],
+
+    "Core Islamic Concepts (islamic)": [
+    "Islam","Iman","Ihsan","Tawheed","Shirk","Akhirah","Qadr","Barakah","Niyyah","Fitrah",
+    "Taqwa","Sabr","Shukr","Ikhlas","Rahmah","Adl","Amanah","Ilm","Hikmah","Dua"
+  ],
+
+  "Five Pillars of Islam (islamic)": [
+    "Shahada","Salah","Zakat","Sawm","Hajj","Declaration of Faith","Obligatory Prayer",
+    "Charity","Fasting","Pilgrimage","Intention","Obligation","Submission"
+  ],
+
+  "Prayer & Worship Terms (islamic)": [
+    "Salah","Wudu","Ghusl","Qiblah","Ruku","Sujood","Tashahhud","Taslim","Khushu",
+    "Adhan","Iqamah","Fard","Sunnah","Nafl","Tahajjud","Witr","Duha"
+  ],
+
+  "Masjid & Mosque Items (islamic)": [
+    "Masjid","Minbar","Mihrab","Prayer Mat","Shoe Rack","Wudu Area","Carpet Rows",
+    "Dome","Calligraphy","Chandelier","Women’s Section","Prayer Hall","Clock Board"
+  ],
+
+  "Qur’an & Revelation (islamic)": [
+    "Qur’an","Surah","Ayah","Juz","Hizb","Tafsir","Revelation","Makki","Madani",
+    "Tilawah","Hifz","Qira’at","Uthmani Script","Mushaf"
+  ],
+
+  "Ramadan & Fasting (islamic)": [
+    "Ramadan","Sawm","Suhoor","Iftar","Taraweeh","Qiyam","Laylatul Qadr","Moon Sighting",
+    "Dates","Fasting Intention","Breaking Fast","Night Prayer"
+  ],
+
+  "Eid & Islamic Celebrations (islamic)": [
+    "Eid al-Fitr","Eid al-Adha","Takbeer","Eid Prayer","Khutbah","New Clothes",
+    "Family Gathering","Charity Before Eid","Sacrifice","Celebration"
+  ],
+
+  "Hajj & Umrah (islamic)": [
+    "Hajj","Umrah","Kaaba","Ihram","Tawaf","Sa’i","Arafah","Mina","Muzdalifah",
+    "Jamaraat","Talbiyah","Sacred Mosque","Pilgrim"
+  ],
+
+  "Islamic People & Roles (islamic)": [
+    "Imam","Mu’adhin","Scholar","Sheikh","Qari","Hafidh","Student of Knowledge",
+    "Teacher","Community Leader","Khateeb","Elder"
+  ],
+
+  "Islamic Ethics & Character (islamic)": [
+    "Akhlaq","Humility","Honesty","Patience","Forgiveness","Generosity","Kindness",
+    "Respect","Modesty","Trustworthiness","Mercy","Self-Control"
+  ],
+
+  "Halal & Daily Life (islamic)": [
+    "Halal","Haram","Zabiha","Halal Meat","Intention","Cleanliness","Modesty",
+    "Hijab","Beard","Prayer Time","Islamic Finance"
+  ],
+
+  "Charity & Giving (islamic)": [
+    "Zakat","Sadaqah","Zakat al-Fitr","Donation","Charity Box","Helping Poor",
+    "Orphan Support","Feeding Hungry","Community Aid"
+  ],
+
+  "Islamic Months (islamic)": [
+    "Muharram","Safar","Rabi al-Awwal","Rabi al-Thani","Jumada al-Ula",
+    "Jumada al-Akhirah","Rajab","Sha’ban","Ramadan","Shawwal",
+    "Dhul Qadah","Dhul Hijjah"
+  ],
+
+  "Islamic Clothing (islamic)": [
+    "Thobe","Abaya","Hijab","Niqab","Kufi","Turban","Jilbab","Prayer Garment",
+    "Modest Dress","Ihram Clothing"
+  ],
+
+  "Islamic Phrases (islamic)": [
+    "Bismillah","Alhamdulillah","SubhanAllah","Allahu Akbar","InshaAllah",
+    "MashaAllah","Astaghfirullah","La ilaha illallah","Salam Alaikum","Ameen"
+  ],
+
+  "Hereafter & Spirituality (islamic)": [
+    "Jannah","Jahannam","Barzakh","Day of Judgment","Scale of Deeds",
+    "Sirat Bridge","Accountability","Reward","Punishment","Eternal Life"
+  ],
+
+  "Family & Life Events (islamic)": [
+    "Nikah","Walimah","Aqeeqah","Naming Ceremony","Marriage Contract",
+    "Family Rights","Parents’ Respect","Raising Children"
+  ],
+
+    "Core Islamic Concepts (islamic)": [
+    "Islam","Iman","Ihsan","Tawheed","Shirk","Akhirah","Qadr","Barakah","Niyyah","Fitrah",
+    "Taqwa","Sabr","Shukr","Ikhlas","Rahmah","Adl","Amanah","Ilm","Hikmah","Dua"
+  ],
+
+  "Five Pillars of Islam (islamic)": [
+    "Shahada","Salah","Zakat","Sawm","Hajj","Declaration of Faith","Obligatory Prayer",
+    "Charity","Fasting","Pilgrimage","Intention","Obligation","Submission"
+  ],
+
+  "Prayer & Worship Terms (islamic)": [
+    "Salah","Wudu","Ghusl","Qiblah","Ruku","Sujood","Tashahhud","Taslim","Khushu",
+    "Adhan","Iqamah","Fard","Sunnah","Nafl","Tahajjud","Witr","Duha"
+  ],
+
+  "Masjid & Mosque Items (islamic)": [
+    "Masjid","Minbar","Mihrab","Prayer Mat","Shoe Rack","Wudu Area","Carpet Rows",
+    "Dome","Calligraphy","Chandelier","Women’s Section","Prayer Hall","Clock Board"
+  ],
+
+  "Qur’an & Revelation (islamic)": [
+    "Qur’an","Surah","Ayah","Juz","Hizb","Tafsir","Revelation","Makki","Madani",
+    "Tilawah","Hifz","Qira’at","Uthmani Script","Mushaf"
+  ],
+
+  "Ramadan & Fasting (islamic)": [
+    "Ramadan","Sawm","Suhoor","Iftar","Taraweeh","Qiyam","Laylatul Qadr","Moon Sighting",
+    "Dates","Fasting Intention","Breaking Fast","Night Prayer"
+  ],
+
+  "Eid & Islamic Celebrations (islamic)": [
+    "Eid al-Fitr","Eid al-Adha","Takbeer","Eid Prayer","Khutbah","New Clothes",
+    "Family Gathering","Charity Before Eid","Sacrifice","Celebration"
+  ],
+
+  "Hajj & Umrah (islamic)": [
+    "Hajj","Umrah","Kaaba","Ihram","Tawaf","Sa’i","Arafah","Mina","Muzdalifah",
+    "Jamaraat","Talbiyah","Sacred Mosque","Pilgrim"
+  ],
+
+  "Islamic People & Roles (islamic)": [
+    "Imam","Mu’adhin","Scholar","Sheikh","Qari","Hafidh","Student of Knowledge",
+    "Teacher","Community Leader","Khateeb","Elder"
+  ],
+
+  "Islamic Ethics & Character (islamic)": [
+    "Akhlaq","Humility","Honesty","Patience","Forgiveness","Generosity","Kindness",
+    "Respect","Modesty","Trustworthiness","Mercy","Self-Control"
+  ],
+
+  "Halal & Daily Life (islamic)": [
+    "Halal","Haram","Zabiha","Halal Meat","Intention","Cleanliness","Modesty",
+    "Hijab","Beard","Prayer Time","Islamic Finance"
+  ],
+
+  "Charity & Giving (islamic)": [
+    "Zakat","Sadaqah","Zakat al-Fitr","Donation","Charity Box","Helping Poor",
+    "Orphan Support","Feeding Hungry","Community Aid"
+  ],
+
+  "Islamic Months (islamic)": [
+    "Muharram","Safar","Rabi al-Awwal","Rabi al-Thani","Jumada al-Ula",
+    "Jumada al-Akhirah","Rajab","Sha’ban","Ramadan","Shawwal",
+    "Dhul Qadah","Dhul Hijjah"
+  ],
+
+  "Islamic Clothing (islamic)": [
+    "Thobe","Abaya","Hijab","Niqab","Kufi","Turban","Jilbab","Prayer Garment",
+    "Modest Dress","Ihram Clothing"
+  ],
+
+  "Islamic Phrases (islamic)": [
+    "Bismillah","Alhamdulillah","SubhanAllah","Allahu Akbar","InshaAllah",
+    "MashaAllah","Astaghfirullah","La ilaha illallah","Salam Alaikum","Ameen"
+  ],
+
+  "Hereafter & Spirituality (islamic)": [
+    "Jannah","Jahannam","Barzakh","Day of Judgment","Scale of Deeds",
+    "Sirat Bridge","Accountability","Reward","Punishment","Eternal Life"
+  ],
+
+  "Family & Life Events (islamic)": [
+    "Nikah","Walimah","Aqeeqah","Naming Ceremony","Marriage Contract",
+    "Family Rights","Parents’ Respect","Raising Children"
   ]
+
 
 
 }
