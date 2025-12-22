@@ -736,6 +736,18 @@
 
   loadCategoriesJSON();
 })();
+
+(() => {
+  const btn = document.getElementById("toggleRules");
+  const body = document.getElementById("rulesBody");
+  if (!btn || !body) return;
+
+  btn.addEventListener("click", () => {
+    const isHidden = body.classList.toggle("hidden");
+    btn.textContent = isHidden ? "Show Rules" : "Hide Rules";
+  });
+})();
+
 </script>
 </body>
 </html>
