@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>NOT IT (Undercover Word Game)</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #0b0f17; color: #e8eefc;
+      display: flex; justify-content: center; padding: 24px;
+    }
+    .app { width: min(980px, 100%); }
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    h1 { margin: 0 0 8px; font-size: 26px; letter-spacing: .3px; }
+    h2 { margin: 0 0 10px; }
+    p { margin: 8px 0; color: rgba(232,238,252,0.85); line-height: 1.35; }
+    .row { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 860px){ .row { grid-template-columns: 1.2fr .8fr; } }
+    .grid { display: grid; gap: 10px; }
+    .grid.two { grid-template-columns: 1fr 1fr; }
+    label { font-size: 12px; opacity: .85; }
+    input, textarea {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.25);
+      color: #e8eefc;
+      padding: 10px 12px;
+      outline: none;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    button {
+      border: 0;
+      border-radius: 12px;
+      padding: 10px 14px;
+      color: #0b0f17;
+      font-weight: 800;
+      background: #8be9fd;
+      cursor: pointer;
+    }
+    button.secondary { background: rgba(255,255,255,0.14); color: #e8eefc; border: 1px solid rgba(255,255,255,0.18); }
+    button.danger { background: #ff6b6b; color: #0b0f17; }
+    button:disabled { opacity: .5; cursor: not-allowed; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 13px;
+      color: rgba(232,238,252,0.9);
+    }
+    .big {
+      font-size: 34px; font-weight: 900; letter-spacing: .5px;
+      padding: 18px; text-align: center;
+      border-radius: 16px;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.14);
+      margin-top: 10px;
+      user-select: none;
+    }
+    .muted { opacity: .8; font-size: 13px; }
+    .hidden { display: none !important; }
+    .timer {
+      font-variant-numeric: tabular-nums;
+      font-size: 26px; font-weight: 900;
+    }
+    .hr { height: 1px; background: rgba(255,255,255,0.12); margin: 14px 0; }
+    .smallnote { font-size: 12px; opacity: .75; }
+    .voteList { display: grid; gap: 8px; }
+    .voteItem {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      cursor: pointer;
+    }
+
+    /* Category grid */
+    #categoryGrid {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(155px,1fr));
+      gap:10px;
+      margin-top:10px;
+      max-height:300px;
+      overflow-y:auto;
+      padding-right: 6px;
+    }
+    .catCard {
+      border-radius: 14px;
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      cursor: pointer;
+      transition: transform .06s ease, border-color .06s ease, background .06s ease;
+      user-select: none;
+    }
+    .catCard:hover { transform: translateY(-1px); border-color: rgba(139,233,253,0.45); }
+    .catTop { display:flex; justify-content:space-between; gap:10px; align-items:baseline; }
+    .catName { font-weight: 900; font-size: 13px; }
+    .catCount { font-size: 12px; opacity: .8; }
+    .catSelected {
+      background: #8be9fd;
+      color: #0b0f17;
+      border-color: rgba(139,233,253,0.9);
+    }
+    .catSelected .catCount { opacity: .9; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="card">
+      <h1>NOT IT</h1>
+      <p>
+        Everyone gets the same word… except <b>one undercover player</b> who sees <span class="pill" style="padding:2px 8px;">???</span>.
+        Pass the phone around to reveal each player’s prompt, then discuss, accuse, and vote.
+      </p>
+    </div>
+
+    <div style="height:14px"></div>
+
+    <div class="row">
+      <div class="card">
+        <h2>Setup</h2>
+
+        <div class="grid two">
+          <div>
+            <label>Number of players</label>
+            <input id="players" type="number" min="3" max="20" value="6"/>
+          </div>
+          <div>
+            <label>Round timer (minutes)</label>
+            <input id="minutes" type="number" min="0" max="30" value="3"/>
+            <div class="smallnote">Set 0 for no timer.</div>
+          </div>
+        </div>
+
+        <div class="grid two" style="margin-top:10px;">
+          <div>
+            <label>Undercover reveal text</label>
+            <input id="undercoverText" type="text" value="???"/>
+            <div class="smallnote">What the undercover player sees.</div>
+          </div>
+          <div>
+            <label>Search categories</label>
+            <input id="categorySearch" placeholder="Search categories (food, anime, cars, etc.)" />
+          </div>
+        </div>
+
+        <div style="margin-top:10px;">
+          <label>Pick a category (tap a card)</label>
+          <div id="categoryGrid"></div>
+          <p id="selectedCategory" class="pill" style="margin-top:10px;">Loading categories…</p>
+        </div>
+
+        <div class="hr"></div>
+
+        <p class="muted"><b>Add your own category</b> (one word per line). Saves to this device.</p>
+        <div class="grid two">
+          <div>
+            <label>Category name</label>
+            <input id="customCatName" type="text" placeholder="e.g., Foods (Spicy)"/>
+          </div>
+          <div class="actions" style="align-items:end;">
+            <button id="addCat">Add / Update Category</button>
+            <button class="secondary" id="resetCustom">Reset Custom (this device)</button>
+          </div>
+        </div>
+        <div style="margin-top:10px;">
+          <label>Words for that category (one per line)</label>
+          <textarea id="customWords" placeholder="pizza&#10;burger&#10;sushi"></textarea>
+        </div>
+
+        <div class="hr"></div>
+
+        <div class="actions">
+          <button id="start">Start Game</button>
+          <button class="secondary" id="previewWord">Preview Random Word</button>
+        </div>
+        <p id="preview" class="pill hidden"></p>
+      </div>
+
+      <div class="card">
+        <h2>Play</h2>
+
+        <div id="status" class="pill">Not started</div>
+
+        <div id="revealArea" class="hidden">
+          <div class="hr"></div>
+          <div class="pill">
+            <span>Player</span> <b id="currentPlayer">1</b>
+            <span style="opacity:.6;">/</span> <b id="totalPlayers">6</b>
+          </div>
+
+          <div class="big" id="bigWord">Tap “Reveal”</div>
+
+          <div class="actions" style="margin-top:10px;">
+            <button id="revealBtn">Reveal</button>
+            <button class="secondary" id="hideBtn" disabled>Hide & Pass</button>
+          </div>
+
+          <p class="smallnote">Rule: don’t say the word out loud. Ask subtle questions.</p>
+
+          <div class="hr"></div>
+
+          <div id="timerArea" class="hidden">
+            <div class="pill">
+              <span>Timer:</span> <span class="timer" id="timer">03:00</span>
+            </div>
+            <div class="actions" style="margin-top:10px;">
+              <button class="secondary" id="pauseTimer">Pause</button>
+              <button class="secondary" id="resetTimer">Reset</button>
+              <button class="danger" id="endRound">End Round</button>
+            </div>
+          </div>
+
+          <div id="noTimerArea" class="hidden">
+            <p class="muted">No timer set. Use “End Round” when ready to vote.</p>
+            <button class="danger" id="endRoundNoTimer">End Round</button>
+          </div>
+        </div>
+
+        <div id="voteArea" class="hidden">
+          <div class="hr"></div>
+          <h3 style="margin:0 0 6px;">Vote</h3>
+          <p class="muted">Tap a player to add votes (one phone tracking).</p>
+          <div class="voteList" id="voteList"></div>
+          <div class="actions" style="margin-top:10px;">
+            <button class="secondary" id="backToReveal">Back</button>
+            <button id="showAnswer">Reveal Answer</button>
+            <button class="danger" id="newGame">New Game</button>
+          </div>
+
+          <div class="hr"></div>
+          <div id="answerArea" class="hidden">
+            <p class="pill" id="answerPill"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="smallnote" style="margin-top:14px;">
+      GitHub Pages tip: this file must be named <b>index.html</b> and categories file must be <b>categories.json</b> in the same folder.
+    </p>
+  </div>
+
+<script>
+(() => {
+  // ---------- Storage keys ----------
+  const CUSTOM_KEY = "notit_custom_categories_v1";
+
+  // ---------- State ----------
+  let baseCategories = {};      // loaded from categories.json
+  let customCategories = loadCustomCats(); // user-added on this device
+  let categories = {};          // merged
+  let selectedCategory = null;
+
+  let game = null;
+  let timerId = null;
+  let remainingSeconds = 0;
+  let timerPaused = false;
+
+  // ---------- Elements ----------
+  const elPlayers = document.getElementById('players');
+  const elMinutes = document.getElementById('minutes');
+  const elUndercoverText = document.getElementById('undercoverText');
+
+  const elCategorySearch = document.getElementById('categorySearch');
+  const elCategoryGrid = document.getElementById('categoryGrid');
+  const elSelectedCategory = document.getElementById('selectedCategory');
+
+  const elCustomCatName = document.getElementById('customCatName');
+  const elCustomWords = document.getElementById('customWords');
+  const elAddCat = document.getElementById('addCat');
+  const elResetCustom = document.getElementById('resetCustom');
+
+  const elStart = document.getElementById('start');
+  const elPreviewWord = document.getElementById('previewWord');
+  const elPreview = document.getElementById('preview');
+
+  const elStatus = document.getElementById('status');
+  const elRevealArea = document.getElementById('revealArea');
+  const elVoteArea = document.getElementById('voteArea');
+
+  const elCurrentPlayer = document.getElementById('currentPlayer');
+  const elTotalPlayers = document.getElementById('totalPlayers');
+  const elBigWord = document.getElementById('bigWord');
+  const elRevealBtn = document.getElementById('revealBtn');
+  const elHideBtn = document.getElementById('hideBtn');
+
+  const elTimerArea = document.getElementById('timerArea');
+  const elNoTimerArea = document.getElementById('noTimerArea');
+  const elTimer = document.getElementById('timer');
+  const elPauseTimer = document.getElementById('pauseTimer');
+  const elResetTimer = document.getElementById('resetTimer');
+  const elEndRound = document.getElementById('endRound');
+  const elEndRoundNoTimer = document.getElementById('endRoundNoTimer');
+
+  const elVoteList = document.getElementById('voteList');
+  const elBackToReveal = document.getElementById('backToReveal');
+  const elShowAnswer = document.getElementById('showAnswer');
+  const elNewGame = document.getElementById('newGame');
+  const elAnswerArea = document.getElementById('answerArea');
+  const elAnswerPill = document.getElementById('answerPill');
+
+  // ---------- Utils ----------
+  function escapeHtml(str){
+    return String(str)
+      .replaceAll("&","&amp;")
+      .replaceAll("<","&lt;")
+      .replaceAll(">","&gt;")
+      .replaceAll('"',"&quot;")
+      .replaceAll("'","&#039;");
+  }
+  function randInt(n){ return Math.floor(Math.random() * n); }
+  function pickRandom(arr){ return arr[randInt(arr.length)]; }
+  function clamp(n, a, b){ return Math.max(a, Math.min(b, n)); }
+
+  function setStatus(text){ elStatus.textContent = text; }
+
+  function formatTime(sec) {
+    const m = Math.floor(sec / 60);
+    const s = sec % 60;
+    return String(m).padStart(2,'0') + ":" + String(s).padStart(2,'0');
+  }
+
+  function stopTimer(){
+    if (timerId) clearInterval(timerId);
+    timerId = null;
+    timerPaused = false;
+    elPauseTimer.textContent = "Pause";
+  }
+
+  function startTimerIfNeeded(){
+    stopTimer();
+    const mins = game.minutes;
+    if (mins <= 0){
+      elTimerArea.classList.add('hidden');
+      elNoTimerArea.classList.remove('hidden');
+      return;
+    }
+    elNoTimerArea.classList.add('hidden');
+    elTimerArea.classList.remove('hidden');
+
+    remainingSeconds = mins * 60;
+    elTimer.textContent = formatTime(remainingSeconds);
+
+    timerId = setInterval(() => {
+      if (timerPaused) return;
+      remainingSeconds--;
+      elTimer.textContent = formatTime(Math.max(0, remainingSeconds));
+      if (remainingSeconds <= 0){
+        stopTimer();
+        setStatus("Time! Go to Vote.");
+        showVote();
+      }
+    }, 1000);
+  }
+
+  function clearAnswer(){
+    elAnswerArea.classList.add('hidden');
+    elAnswerPill.textContent = "";
+  }
+
+  // ---------- Categories merge ----------
+  function loadCustomCats(){
+    try {
+      const raw = localStorage.getItem(CUSTOM_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch { return {}; }
+  }
+  function saveCustomCats(){
+    localStorage.setItem(CUSTOM_KEY, JSON.stringify(customCategories));
+  }
+
+  function mergeCategoryMaps(base, extra){
+    const out = {};
+    // base
+    for (const [k, arr] of Object.entries(base || {})) out[k] = Array.isArray(arr) ? arr.slice() : [];
+    // extra (merge unique)
+    for (const [k, arr] of Object.entries(extra || {})) {
+      if (!out[k]) out[k] = [];
+      const set = new Set(out[k]);
+      for (const w of (Array.isArray(arr) ? arr : [])) set.add(w);
+      out[k] = Array.from(set);
+    }
+    return out;
+  }
+
+  function rebuildCategories(){
+    categories = mergeCategoryMaps(baseCategories, customCategories);
+    // if selected category was deleted, clear it
+    if (selectedCategory && !categories[selectedCategory]) {
+      selectedCategory = null;
+      elSelectedCategory.textContent = "No category selected";
+    }
+    renderCategories(elCategorySearch.value || "");
+  }
+
+  // ---------- Render grid ----------
+  function renderCategories(filter){
+    elCategoryGrid.innerHTML = "";
+
+    const keys = Object.keys(categories)
+      .sort((a,b) => a.localeCompare(b))
+      .filter(k => k.toLowerCase().includes(filter.toLowerCase()));
+
+    if (!keys.length){
+      const empty = document.createElement("div");
+      empty.className = "pill";
+      empty.textContent = "No categories match your search.";
+      elCategoryGrid.appendChild(empty);
+      return;
+    }
+
+    keys.forEach(cat => {
+      const words = categories[cat] || [];
+      const card = document.createElement("div");
+      card.className = "catCard" + (cat === selectedCategory ? " catSelected" : "");
+      card.innerHTML = `
+        <div class="catTop">
+          <div class="catName">${escapeHtml(cat)}</div>
+          <div class="catCount">${words.length}</div>
+        </div>
+        <div class="smallnote" style="margin-top:6px;">Tap to select</div>
+      `;
+      card.onclick = () => {
+        selectedCategory = cat;
+        elSelectedCategory.textContent = `Selected: ${cat}`;
+        elPreview.classList.add('hidden');
+        renderCategories(elCategorySearch.value || "");
+      };
+      elCategoryGrid.appendChild(card);
+    });
+
+    elSelectedCategory.textContent = selectedCategory
+      ? `Selected: ${selectedCategory}`
+      : "No category selected";
+  }
+
+  function ensureCategorySelected(){
+    if (!selectedCategory) throw new Error("Select a category first.");
+    const words = categories[selectedCategory] || [];
+    if (!words.length) throw new Error("That category has no words.");
+    return { cat: selectedCategory, words };
+  }
+
+  // ---------- Game ----------
+  function newGameState(){
+    const players = clamp(parseInt(elPlayers.value || "6", 10), 3, 20);
+    const { cat, words } = ensureCategorySelected();
+    const word = pickRandom(words);
+    const undercoverIndex = randInt(players);
+    const minutes = clamp(parseInt(elMinutes.value || "0", 10), 0, 30);
+    return {
+      players,
+      category: cat,
+      word,
+      undercoverIndex,
+      currentIndex: 0,
+      revealed: false,
+      minutes,
+      undercoverText: (elUndercoverText.value || "???").trim() || "???",
+      votes: Array(players).fill(0),
+    };
+  }
+
+  function updateRevealUI(){
+    elCurrentPlayer.textContent = String(game.currentIndex + 1);
+    elTotalPlayers.textContent = String(game.players);
+
+    if (!game.revealed){
+      elBigWord.textContent = "Tap “Reveal”";
+      elHideBtn.disabled = true;
+      elRevealBtn.disabled = false;
+    } else {
+      const isUndercover = (game.currentIndex === game.undercoverIndex);
+      elBigWord.textContent = isUndercover ? game.undercoverText : game.word;
+      elHideBtn.disabled = false;
+      elRevealBtn.disabled = true;
+    }
+  }
+
+  function showReveal(){
+    elVoteArea.classList.add('hidden');
+    elRevealArea.classList.remove('hidden');
+    clearAnswer();
+  }
+
+  function showVote(){
+    elRevealArea.classList.add('hidden');
+    elVoteArea.classList.remove('hidden');
+    buildVoteList();
+  }
+
+  function buildVoteList(){
+    elVoteList.innerHTML = '';
+    for (let i=0;i<game.players;i++){
+      const row = document.createElement('div');
+      row.className = 'voteItem';
+      const left = document.createElement('div');
+      left.textContent = `Player ${i+1}`;
+      const right = document.createElement('div');
+      right.className = 'pill';
+      right.textContent = `Votes: ${game.votes[i]}`;
+      row.appendChild(left);
+      row.appendChild(right);
+      row.onclick = () => { game.votes[i] += 1; buildVoteList(); };
+      elVoteList.appendChild(row);
+    }
+  }
+
+  // ---------- Events ----------
+  elCategorySearch.addEventListener("input", (e) => renderCategories(e.target.value || ""));
+
+  elPreviewWord.addEventListener('click', () => {
+    try {
+      const { cat, words } = ensureCategorySelected();
+      const w = pickRandom(words);
+      elPreview.classList.remove('hidden');
+      elPreview.textContent = `Preview: ${cat} → “${w}”`;
+    } catch (e) {
+      elPreview.classList.remove('hidden');
+      elPreview.textContent = e.message || String(e);
+    }
+  });
+
+  elAddCat.addEventListener('click', () => {
+    const name = (elCustomCatName.value || "").trim();
+    const raw = (elCustomWords.value || "").trim();
+    if (!name || !raw) { alert("Add a category name and at least 1 word (one per line)."); return; }
+    const words = raw.split("\n").map(s => s.trim()).filter(Boolean);
+    customCategories[name] = Array.from(new Set(words));
+    saveCustomCats();
+
+    selectedCategory = name;
+    elCategorySearch.value = "";
+    rebuildCategories();
+
+    elPreview.classList.remove('hidden');
+    elPreview.textContent = `Saved custom category “${name}” with ${customCategories[name].length} words (on this device).`;
+  });
+
+  elResetCustom.addEventListener('click', () => {
+    if (!confirm("Remove all custom categories on this device?")) return;
+    customCategories = {};
+    saveCustomCats();
+    rebuildCategories();
+    elCustomCatName.value = "";
+    elCustomWords.value = "";
+    elPreview.classList.remove('hidden');
+    elPreview.textContent = "Custom categories cleared (this device).";
+  });
+
+  elStart.addEventListener('click', () => {
+    try {
+      game = newGameState();
+      setStatus(`Started: ${game.players} players • ${game.category}`);
+      elRevealArea.classList.remove('hidden');
+      elVoteArea.classList.add('hidden');
+      game.currentIndex = 0;
+      game.revealed = false;
+      updateRevealUI();
+      startTimerIfNeeded();
+    } catch (e) {
+      alert(e.message || String(e));
+    }
+  });
+
+  elRevealBtn.addEventListener('click', () => { if (!game) return; game.revealed = true; updateRevealUI(); });
+
+  elHideBtn.addEventListener('click', () => {
+    if (!game) return;
+    game.revealed = false;
+    game.currentIndex += 1;
+
+    if (game.currentIndex >= game.players){
+      setStatus("All players have seen their prompt. Discuss!");
+      game.currentIndex = game.players - 1;
+      elBigWord.textContent = "Everyone saw their prompt. Discuss now.";
+      elRevealBtn.disabled = true;
+      elHideBtn.disabled = true;
+      return;
+    }
+    updateRevealUI();
+  });
+
+  elPauseTimer.addEventListener('click', () => {
+    if (!timerId) return;
+    timerPaused = !timerPaused;
+    elPauseTimer.textContent = timerPaused ? "Resume" : "Pause";
+  });
+
+  elResetTimer.addEventListener('click', () => { if (!game) return; startTimerIfNeeded(); });
+
+  elEndRound.addEventListener('click', () => { stopTimer(); setStatus("Round ended. Vote now."); showVote(); });
+  elEndRoundNoTimer.addEventListener('click', () => { setStatus("Round ended. Vote now."); showVote(); });
+
+  elBackToReveal.addEventListener('click', () => showReveal());
+
+  elShowAnswer.addEventListener('click', () => {
+    if (!game) return;
+    elAnswerArea.classList.remove('hidden');
+    elAnswerPill.textContent = `Word: “${game.word}” • Undercover: Player ${game.undercoverIndex + 1} • Category: ${game.category}`;
+  });
+
+  elNewGame.addEventListener('click', () => {
+    stopTimer();
+    game = null;
+    elRevealArea.classList.add('hidden');
+    elVoteArea.classList.add('hidden');
+    setStatus("Not started");
+    clearAnswer();
+    elBigWord.textContent = "Tap “Reveal”";
+    elRevealBtn.disabled = false;
+    elHideBtn.disabled = true;
+  });
+
+  // ---------- Load categories.json ----------
+  async function loadCategoriesJSON(){
+    try {
+      const res = await fetch("./categories.json", { cache: "no-store" });
+      if (!res.ok) throw new Error("Could not load categories.json");
+      const data = await res.json();
+      if (!data || typeof data !== "object") throw new Error("Invalid categories.json");
+      baseCategories = data;
+      rebuildCategories();
+      elSelectedCategory.textContent = "No category selected";
+    } catch (err) {
+      // fallback: tiny emergency set so app still runs
+      baseCategories = {
+        "Foods": ["Pizza","Burger","Sushi","Tacos","Biryani","Ramen","Pasta","Steak","Shawarma","Fries"],
+        "Places": ["Airport","Mall","Beach","Gym","Library","Hospital","School","Stadium","Museum","Park"],
+        "Animals": ["Dog","Cat","Lion","Tiger","Bear","Wolf","Horse","Elephant","Giraffe","Zebra"]
+      };
+      rebuildCategories();
+      elSelectedCategory.textContent = "Loaded fallback categories (categories.json missing).";
+      console.error(err);
+    }
+  }
+
+  loadCategoriesJSON();
+})();
+</script>
+</body>
+</html>
