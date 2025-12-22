@@ -629,7 +629,7 @@
   // ---------- Load categories.json ----------
   async function loadCategoriesJSON(){
     try {
-      const res = await fetch("./categories.json", { cache: "no-store" });
+      const res = await fetch("categories.json", { cache: "no-store" });
       if (!res.ok) throw new Error("Could not load categories.json");
       const data = await res.json();
       if (!data || typeof data !== "object") throw new Error("Invalid categories.json");
@@ -654,3 +654,4 @@
 </script>
 </body>
 </html>
+
