@@ -115,6 +115,13 @@
       border-color: rgba(139,233,253,0.9);
     }
     .catSelected .catCount { opacity: .9; }
+
+    /* Active pick highlight */
+    button.activePick {
+      background: #8be9fd !important;
+      color: #0b0f17 !important;
+      border: 0 !important;
+    }
   </style>
 </head>
 <body>
@@ -122,7 +129,7 @@
     <div class="card">
       <h1>NOT IT</h1>
       <p>
-        Everyone gets the same word… except <b>one undercover player</b> who sees <span class="pill" style="padding:2px 8px;">???</span>.
+        Everyone gets the same word… except <b>one or more undercover players</b> who see <span class="pill" style="padding:2px 8px;">???</span>.
         Pass the phone around to reveal each player’s prompt, then discuss, accuse, and vote.
       </p>
     </div>
@@ -133,23 +140,22 @@
       <div class="card">
         <h2>Setup</h2>
 
-       <div class="grid two">
-        <div>
+        <div class="grid two">
+          <div>
             <label>Number of players</label>
-            <input id="players" type="number" min="2" max="20" value="6"/>
+            <input id="players" type="number" min="3" max="20" value="6"/>
             <div class="smallnote">Recommended: 5–10 players</div>
-        </div>
-
-        <div>
+          </div>
+          <div>
             <label>Undercover players</label>
             <input id="undercoverCount" type="number" min="1" max="4" value="1"/>
             <div class="smallnote">1 is classic. Try 2+ for chaos.</div>
-        </div>
+          </div>
         </div>
 
         <div style="margin-top:10px;">
-        <label>Round timer</label>
-        <div class="actions">
+          <label>Round timer</label>
+          <div class="actions">
             <button class="secondary" type="button" data-mins="0">No timer</button>
             <button class="secondary" type="button" data-mins="2">2m</button>
             <button class="secondary" type="button" data-mins="3">3m</button>
@@ -157,27 +163,26 @@
             <button class="secondary" type="button" data-mins="5">5m</button>
             <button class="secondary" type="button" data-mins="7">7m</button>
             <button class="secondary" type="button" data-mins="10">10m</button>
-        </div>
-        <div class="smallnote" style="margin-top:6px;">
+          </div>
+          <div class="smallnote" style="margin-top:6px;">
             Current: <b><span id="timerLabel">3 minutes</span></b>
-        </div>
+          </div>
         </div>
 
         <div style="margin-top:10px;">
-        <label>Quick presets</label>
-        <div class="actions">
+          <label>Quick presets</label>
+          <div class="actions">
             <button class="secondary" type="button" id="preset6">6 players • 3m</button>
             <button class="secondary" type="button" id="preset8">8 players • 4m</button>
             <button class="secondary" type="button" id="preset10">10 players • 5m</button>
+          </div>
         </div>
-        </div>
-
 
         <div class="grid two" style="margin-top:10px;">
           <div>
             <label>Undercover reveal text</label>
             <input id="undercoverText" type="text" value="???"/>
-            <div class="smallnote">What the undercover player sees.</div>
+            <div class="smallnote">What undercover players see.</div>
           </div>
           <div>
             <label>Search categories</label>
@@ -193,27 +198,12 @@
 
         <div class="hr"></div>
 
-        <p class="muted"><b>Add your own category</b> (one word per line). Saves to this device.</p>
-        <div class="grid two">
-          <div>
-            <label>Category name</label>
-            <input id="customCatName" type="text" placeholder="e.g., Foods (Spicy)"/>
-          </div>
-          <div class="actions" style="align-items:end;">
-            <button id="addCat">Add / Update Category</button>
-            <button class="secondary" id="resetCustom">Reset Custom (this device)</button>
-          </div>
-        </div>
-        <div style="margin-top:10px;">
-          <label>Words for that category (one per line)</label>
-          <textarea id="customWords" placeholder="pizza&#10;burger&#10;sushi"></textarea>
-        </div>
-
-        <div class="hr"></div>
+        <!-- MAKE YOUR OWN CATEGORY REMOVED -->
 
         <div class="actions">
           <button id="start">Start Game</button>
           <button class="secondary" id="previewWord">Preview Random Word</button>
+          <button class="secondary" id="randomCategory">Random Category</button>
         </div>
         <p id="preview" class="pill hidden"></p>
       </div>
@@ -285,12 +275,11 @@
 <script>
 (() => {
   // ---------- Storage keys ----------
-  const CUSTOM_KEY = "notit_custom_categories_v1";
+  // (custom categories removed)
 
   // ---------- State ----------
   let baseCategories = {};      // loaded from categories.json
-  let customCategories = loadCustomCats(); // user-added on this device
-  let categories = {};          // merged
+  let categories = {};          // base only
   let selectedCategory = null;
 
   let game = null;
@@ -300,20 +289,22 @@
 
   // ---------- Elements ----------
   const elPlayers = document.getElementById('players');
-  const elMinutes = document.getElementById('minutes');
+  const elUndercoverCount = document.getElementById('undercoverCount');
+  const elMinutes = document.getElementById('minutes') || { value: "3" }; // legacy safety
   const elUndercoverText = document.getElementById('undercoverText');
 
   const elCategorySearch = document.getElementById('categorySearch');
   const elCategoryGrid = document.getElementById('categoryGrid');
   const elSelectedCategory = document.getElementById('selectedCategory');
 
-  const elCustomCatName = document.getElementById('customCatName');
-  const elCustomWords = document.getElementById('customWords');
-  const elAddCat = document.getElementById('addCat');
-  const elResetCustom = document.getElementById('resetCustom');
+  const elTimerLabel = document.getElementById('timerLabel');
+  const elPreset6 = document.getElementById('preset6');
+  const elPreset8 = document.getElementById('preset8');
+  const elPreset10 = document.getElementById('preset10');
 
   const elStart = document.getElementById('start');
   const elPreviewWord = document.getElementById('previewWord');
+  const elRandomCategory = document.getElementById('randomCategory');
   const elPreview = document.getElementById('preview');
 
   const elStatus = document.getElementById('status');
@@ -369,6 +360,15 @@
     elPauseTimer.textContent = "Pause";
   }
 
+  function setMinutes(mins){
+    // Keep a hidden minutes value in memory (no input needed)
+    elMinutes.value = String(mins);
+    elTimerLabel.textContent = mins === 0 ? "No timer" : `${mins} minutes`;
+    document.querySelectorAll('button[data-mins]').forEach(b => {
+      b.classList.toggle('activePick', String(b.dataset.mins) === String(mins));
+    });
+  }
+
   function startTimerIfNeeded(){
     stopTimer();
     const mins = game.minutes;
@@ -400,34 +400,9 @@
     elAnswerPill.textContent = "";
   }
 
-  // ---------- Categories merge ----------
-  function loadCustomCats(){
-    try {
-      const raw = localStorage.getItem(CUSTOM_KEY);
-      return raw ? JSON.parse(raw) : {};
-    } catch { return {}; }
-  }
-  function saveCustomCats(){
-    localStorage.setItem(CUSTOM_KEY, JSON.stringify(customCategories));
-  }
-
-  function mergeCategoryMaps(base, extra){
-    const out = {};
-    // base
-    for (const [k, arr] of Object.entries(base || {})) out[k] = Array.isArray(arr) ? arr.slice() : [];
-    // extra (merge unique)
-    for (const [k, arr] of Object.entries(extra || {})) {
-      if (!out[k]) out[k] = [];
-      const set = new Set(out[k]);
-      for (const w of (Array.isArray(arr) ? arr : [])) set.add(w);
-      out[k] = Array.from(set);
-    }
-    return out;
-  }
-
+  // ---------- Categories ----------
   function rebuildCategories(){
-    categories = mergeCategoryMaps(baseCategories, customCategories);
-    // if selected category was deleted, clear it
+    categories = baseCategories || {};
     if (selectedCategory && !categories[selectedCategory]) {
       selectedCategory = null;
       elSelectedCategory.textContent = "No category selected";
@@ -483,21 +458,38 @@
     return { cat: selectedCategory, words };
   }
 
+  function randomSelectCategory(){
+    const keys = Object.keys(categories);
+    if (!keys.length) return;
+    selectedCategory = keys[randInt(keys.length)];
+    elCategorySearch.value = "";
+    elSelectedCategory.textContent = `Selected: ${selectedCategory}`;
+    elPreview.classList.add('hidden');
+    renderCategories("");
+  }
+
   // ---------- Game ----------
   function newGameState(){
     const players = clamp(parseInt(elPlayers.value || "6", 10), 3, 20);
     const { cat, words } = ensureCategorySelected();
     const word = pickRandom(words);
-    const undercoverIndex = randInt(players);
-    const minutes = clamp(parseInt(elMinutes.value || "0", 10), 0, 30);
+
+    const ucWanted = clamp(parseInt(elUndercoverCount.value || "1", 10), 1, Math.min(4, players - 2));
+    const undercoverSet = new Set();
+    while (undercoverSet.size < ucWanted){
+      undercoverSet.add(randInt(players));
+    }
+
+    const mins = clamp(parseInt(elMinutes.value || "0", 10), 0, 30);
+
     return {
       players,
       category: cat,
       word,
-      undercoverIndex,
+      undercoverSet: Array.from(undercoverSet),
       currentIndex: 0,
       revealed: false,
-      minutes,
+      minutes: mins,
       undercoverText: (elUndercoverText.value || "???").trim() || "???",
       votes: Array(players).fill(0),
     };
@@ -512,7 +504,7 @@
       elHideBtn.disabled = true;
       elRevealBtn.disabled = false;
     } else {
-      const isUndercover = (game.currentIndex === game.undercoverIndex);
+      const isUndercover = game.undercoverSet.includes(game.currentIndex);
       elBigWord.textContent = isUndercover ? game.undercoverText : game.word;
       elHideBtn.disabled = false;
       elRevealBtn.disabled = true;
@@ -551,6 +543,22 @@
   // ---------- Events ----------
   elCategorySearch.addEventListener("input", (e) => renderCategories(e.target.value || ""));
 
+  // Timer pick buttons
+  document.querySelectorAll('button[data-mins]').forEach(btn => {
+    btn.addEventListener('click', () => setMinutes(parseInt(btn.dataset.mins, 10)));
+  });
+
+  // Presets
+  elPreset6.addEventListener('click', () => { elPlayers.value = "6"; elUndercoverCount.value = "1"; setMinutes(3); });
+  elPreset8.addEventListener('click', () => { elPlayers.value = "8"; elUndercoverCount.value = "1"; setMinutes(4); });
+  elPreset10.addEventListener('click', () => { elPlayers.value = "10"; elUndercoverCount.value = "2"; setMinutes(5); });
+
+  elRandomCategory.addEventListener('click', () => {
+    randomSelectCategory();
+    elPreview.classList.remove('hidden');
+    elPreview.textContent = `Random category selected: ${selectedCategory}`;
+  });
+
   elPreviewWord.addEventListener('click', () => {
     try {
       const { cat, words } = ensureCategorySelected();
@@ -563,37 +571,11 @@
     }
   });
 
-  elAddCat.addEventListener('click', () => {
-    const name = (elCustomCatName.value || "").trim();
-    const raw = (elCustomWords.value || "").trim();
-    if (!name || !raw) { alert("Add a category name and at least 1 word (one per line)."); return; }
-    const words = raw.split("\n").map(s => s.trim()).filter(Boolean);
-    customCategories[name] = Array.from(new Set(words));
-    saveCustomCats();
-
-    selectedCategory = name;
-    elCategorySearch.value = "";
-    rebuildCategories();
-
-    elPreview.classList.remove('hidden');
-    elPreview.textContent = `Saved custom category “${name}” with ${customCategories[name].length} words (on this device).`;
-  });
-
-  elResetCustom.addEventListener('click', () => {
-    if (!confirm("Remove all custom categories on this device?")) return;
-    customCategories = {};
-    saveCustomCats();
-    rebuildCategories();
-    elCustomCatName.value = "";
-    elCustomWords.value = "";
-    elPreview.classList.remove('hidden');
-    elPreview.textContent = "Custom categories cleared (this device).";
-  });
-
   elStart.addEventListener('click', () => {
     try {
       game = newGameState();
-      setStatus(`Started: ${game.players} players • ${game.category}`);
+      const uc = game.undercoverSet.map(i => i+1).join(", ");
+      setStatus(`Started: ${game.players} players • ${game.category} • Undercover: ${game.undercoverSet.length} (${uc})`);
       elRevealArea.classList.remove('hidden');
       elVoteArea.classList.add('hidden');
       game.currentIndex = 0;
@@ -639,7 +621,8 @@
   elShowAnswer.addEventListener('click', () => {
     if (!game) return;
     elAnswerArea.classList.remove('hidden');
-    elAnswerPill.textContent = `Word: “${game.word}” • Undercover: Player ${game.undercoverIndex + 1} • Category: ${game.category}`;
+    const uc = game.undercoverSet.map(i => `Player ${i+1}`).join(", ");
+    elAnswerPill.textContent = `Word: “${game.word}” • Undercover: ${uc} • Category: ${game.category}`;
   });
 
   elNewGame.addEventListener('click', () => {
@@ -653,6 +636,9 @@
     elRevealBtn.disabled = false;
     elHideBtn.disabled = true;
   });
+
+  // ---------- Init timer default ----------
+  setMinutes(3); // default display + highlight
 
   // ---------- Load categories.json ----------
   async function loadCategoriesJSON(){
@@ -682,4 +668,3 @@
 </script>
 </body>
 </html>
-
