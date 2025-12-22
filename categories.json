@@ -382,7 +382,152 @@
     "ASMR","Mukbang",
     "Unboxing Trend","Reaction Videos",
     "Storytime","Viral Challenges"
+  ],
+
+    "Movie Characters": [
+    "Batman","Joker","Iron Man","Spider-Man","Thanos","Darth Vader","Luke Skywalker",
+    "Harry Potter","Voldemort","Frodo","Gandalf","Legolas","Neo","Trinity","John Wick",
+    "Indiana Jones","James Bond","Katniss Everdeen","Hannibal Lecter","Forrest Gump",
+    "Rocky Balboa","Tony Montana","Scarface","Michael Corleone","The Godfather",
+    "Jack Sparrow","Captain America","Thor","Loki","Black Panther","Deadpool",
+    "Wolverine","Hulk","Doctor Strange","Wonder Woman","Superman"
+  ],
+
+  "TV Show Characters": [
+    "Walter White","Jesse Pinkman","Saul Goodman","Michael Scott","Dwight Schrute",
+    "Jim Halpert","Pam Beesly","Jon Snow","Daenerys Targaryen","Tyrion Lannister",
+    "Rick Grimes","Daryl Dixon","Eleven","Hopper","Wednesday Addams","Geralt of Rivia",
+    "Homelander","Butcher","Dexter Morgan","Joe Goldberg","Sheldon Cooper",
+    "Barney Stinson","Ted Mosby","Rachel Green","Ross Geller","Monica Geller"
+  ],
+
+  "Anime Characters": [
+    "Naruto","Sasuke","Itachi","Goku","Vegeta","Luffy","Zoro","Sanji",
+    "Eren Yeager","Levi Ackerman","Mikasa","Tanjiro","Nezuko","Gojo","Sukuna",
+    "Yuji Itadori","Light Yagami","L","Ichigo","Aizen","Edward Elric",
+    "Alphonse Elric","Spike Spiegel","Killua","Gon"
+  ],
+
+  "Video Game Characters": [
+    "Mario","Luigi","Bowser","Link","Zelda","Ganondorf","Master Chief",
+    "Kratos","Atreus","Arthur Morgan","Trevor Philips","CJ","Cloud Strife",
+    "Sephiroth","Geralt of Rivia","Ezio Auditore","Altair","Lara Croft",
+    "Nathan Drake","Joel","Ellie","Aloy","Kratos","Sub-Zero","Scorpion"
+  ],
+
+  "Superheroes": [
+    "Spider-Man","Batman","Superman","Iron Man","Captain America",
+    "Thor","Hulk","Black Panther","Doctor Strange","Scarlet Witch",
+    "Flash","Green Lantern","Aquaman","Wonder Woman","Ant-Man",
+    "Wasp","Deadpool","Wolverine","Professor X","Magneto"
+  ],
+
+  "Villains": [
+    "Joker","Thanos","Darth Vader","Voldemort","Green Goblin",
+    "Loki","Ultron","Magneto","Homelander","Scarlet Witch",
+    "Lex Luthor","Bane","Hannibal Lecter","Pennywise",
+    "Freddy Krueger","Michael Myers","Ghostface","Sauron"
+  ],
+
+  "Personality Types": [
+    "Introvert","Extrovert","Ambivert","Leader","Follower",
+    "Overthinker","Planner","Spontaneous","Chill","Competitive",
+    "People-Pleaser","Perfectionist","Procrastinator","Realist",
+    "Optimist","Pessimist","Empath","Analytical","Creative","Logical"
+  ],
+
+  "Red Flags": [
+    "Never texts back","Always late","Bad tipper","Hates animals",
+    "Rude to servers","Gaslighting","Jealous","Love bombing",
+    "Avoids accountability","Talks over you","Clingy","Dry texter",
+    "Brags too much","Always negative","Never apologizes",
+    "Talks about ex constantly","Lies","Manipulative"
+  ],
+
+  "Green Flags": [
+    "Good listener","Respects boundaries","Kind to strangers",
+    "Consistent","Emotionally mature","Communicates clearly",
+    "Supportive","Honest","Patient","Reliable","Growth mindset",
+    "Keeps promises","Empathetic","Self-aware","Encouraging"
+  ],
+
+  "Main Character Energy": [
+    "Walking alone at night","Window seat vibes","Slow-motion entrance",
+    "Rain scene","Late night drive","Solo coffee shop visit",
+    "City skyline moment","Airport montage","Breakup glow-up",
+    "Workout transformation","Sunset stare","Headphones on world off"
+  ],
+
+  "NPC Behavior": [
+    "Repeats same phrase","No opinions","Follows trends blindly",
+    "Laughs at everything","Copies personality","Awkward pauses",
+    "Generic responses","Always agreeable","Low energy","Auto-pilot mode"
+  ],
+
+  "Internet Slang (Modern)": [
+    "Rizz","Gyatt","Mid","Based","Cringe","Cap","No Cap","NPC",
+    "Main character","Soft launch","Hard launch","Unhinged",
+    "Lowkey","Highkey","IYKYK","Touch grass","Side eye","Ratio"
+  ],
+
+  "Memes (All Time)": [
+    "Distracted Boyfriend","Drake Hotline Bling","Woman Yelling at Cat",
+    "This Is Fine","Expanding Brain","Mocking SpongeBob",
+    "Surprised Pikachu","Arthur Fist","Side Eye","NPC Stream",
+    "Ohio Meme","Skull Emoji"
+  ],
+
+  "Songs Everyone Knows": [
+    "Bohemian Rhapsody","Shape of You","Blinding Lights",
+    "Uptown Funk","Rolling in the Deep","Thriller",
+    "Smells Like Teen Spirit","Hey Jude","Sweet Caroline",
+    "We Will Rock You","Hotel California","Billie Jean"
+  ],
+
+  "Gym Songs": [
+    "Lose Yourself","POWER","Till I Collapse",
+    "SICKO MODE","HUMBLE","All of the Lights",
+    "Can't Hold Us","Remember the Name","Stronger",
+    "Eye of the Tiger"
+  ],
+
+  "Games You Rage Quit": [
+    "Dark Souls","Elden Ring","League of Legends",
+    "Valorant","CS2","FIFA","NBA 2K","Getting Over It",
+    "Cuphead","Sekiro"
+  ],
+
+  "Movie Plot Twists": [
+    "Fight Club","The Sixth Sense","Shutter Island",
+    "Gone Girl","Se7en","Oldboy","The Prestige",
+    "Inception","Interstellar","Usual Suspects"
+  ],
+
+  "YouTube Video Types": [
+    "Vlog","Prank","Challenge","Reaction",
+    "Storytime","Unboxing","Review",
+    "Podcast Clip","Gaming Montage","Essay Video"
+  ],
+
+  "TikTok Content Types": [
+    "Dance","Storytime","GRWM","Day in the Life",
+    "Motivational","Skits","POV","Lip Sync",
+    "Trend Remix","Voiceover"
+  ],
+
+  "Influencer Types": [
+    "Fitness influencer","Travel influencer","Food reviewer",
+    "Lifestyle vlogger","Tech reviewer","Motivation speaker",
+    "Couple account","Prank channel","Fashion influencer"
+  ],
+
+  "Things That Start Arguments": [
+    "Pineapple on pizza","Android vs iPhone",
+    "Subtitles on or off","Cats vs dogs",
+    "Early bird vs night owl","Money splits",
+    "Best rapper debate","Marvel vs DC"
   ]
+
 
 
 }
