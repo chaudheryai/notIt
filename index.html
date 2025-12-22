@@ -133,17 +133,45 @@
       <div class="card">
         <h2>Setup</h2>
 
-        <div class="grid two">
-          <div>
+       <div class="grid two">
+        <div>
             <label>Number of players</label>
-            <input id="players" type="number" min="3" max="20" value="6"/>
-          </div>
-          <div>
-            <label>Round timer (minutes)</label>
-            <input id="minutes" type="number" min="0" max="30" value="3"/>
-            <div class="smallnote">Set 0 for no timer.</div>
-          </div>
+            <input id="players" type="number" min="2" max="20" value="6"/>
+            <div class="smallnote">Recommended: 5–10 players</div>
         </div>
+
+        <div>
+            <label>Undercover players</label>
+            <input id="undercoverCount" type="number" min="1" max="4" value="1"/>
+            <div class="smallnote">1 is classic. Try 2+ for chaos.</div>
+        </div>
+        </div>
+
+        <div style="margin-top:10px;">
+        <label>Round timer</label>
+        <div class="actions">
+            <button class="secondary" type="button" data-mins="0">No timer</button>
+            <button class="secondary" type="button" data-mins="2">2m</button>
+            <button class="secondary" type="button" data-mins="3">3m</button>
+            <button class="secondary" type="button" data-mins="4">4m</button>
+            <button class="secondary" type="button" data-mins="5">5m</button>
+            <button class="secondary" type="button" data-mins="7">7m</button>
+            <button class="secondary" type="button" data-mins="10">10m</button>
+        </div>
+        <div class="smallnote" style="margin-top:6px;">
+            Current: <b><span id="timerLabel">3 minutes</span></b>
+        </div>
+        </div>
+
+        <div style="margin-top:10px;">
+        <label>Quick presets</label>
+        <div class="actions">
+            <button class="secondary" type="button" id="preset6">6 players • 3m</button>
+            <button class="secondary" type="button" id="preset8">8 players • 4m</button>
+            <button class="secondary" type="button" id="preset10">10 players • 5m</button>
+        </div>
+        </div>
+
 
         <div class="grid two" style="margin-top:10px;">
           <div>
