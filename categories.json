@@ -673,6 +673,218 @@
   "Simple Adjectives (Generic)": [
     "Big","Small","Fast","Slow","Hot","Cold","Light","Heavy",
     "Bright","Dark","Clean","Dirty","New","Old","Soft","Hard"
+  ],
+
+  "Jobs & Professions (generic)": [
+    "Archaeologist","Barista","Carpenter","Civil Engineer","Counselor","Data Analyst","Dentist","Detective",
+    "Electrician","Fashion Designer","Firefighter","Flight Attendant","Forensic Scientist","Graphic Designer",
+    "Journalist","Lawyer","Librarian","Mechanic","Paramedic","Pharmacist","Photographer","Pilot","Plumber",
+    "Product Manager","Professor","Psychologist","Radiologic Technologist","Real Estate Agent","Software Engineer","Teacher"
+  ],
+
+  "School Subjects (generic)": [
+    "Algebra","Geometry","Calculus","Statistics","Physics","Chemistry","Biology","Anatomy","Economics","Psychology",
+    "Sociology","World History","Government","Philosophy","Literature","Creative Writing","Art History",
+    "Computer Science","Environmental Science","Music Theory","Foreign Language","Public Speaking","Accounting","Astronomy"
+  ],
+
+  "Science Fields (generic)": [
+    "Astrophysics","Biochemistry","Botany","Cognitive Science","Ecology","Epidemiology","Genetics","Geology",
+    "Immunology","Meteorology","Microbiology","Neuroscience","Oceanography","Organic Chemistry","Paleontology",
+    "Pharmacology","Quantum Mechanics","Robotics","Thermodynamics","Toxicology","Virology","Zoology"
+  ],
+
+  "Space & Astronomy (generic)": [
+    "Asteroid Belt","Black Hole","Comet","Constellation","Dwarf Planet","Exoplanet","Galaxy","Gravity","Light-Year",
+    "Lunar Eclipse","Meteor Shower","Nebula","North Star","Orbit","Photon","Rocket","Solar Flare","Space Station",
+    "Supernova","Telescope","The Milky Way","Wormhole"
+  ],
+
+  "Weather & Sky (generic)": [
+    "Aurora","Blizzard","Cloudburst","Cold Front","Drought","Fog Bank","Gale Winds","Hailstorm","Heat Wave",
+    "Hurricane","Lightning","Monsoon","Rainbow","Sandstorm","Sleet","Snowdrift","Storm Surge","Thunder",
+    "Tornado","Tropical Storm","Typhoon","Waterspout"
+  ],
+
+  "Music Genres (generic)": [
+    "Afrobeats","Alternative Rock","Ambient","Bluegrass","Blues","Bollywood","Bossa Nova","Classical","Country",
+    "Drill","EDM","Funk","Gospel","Grunge","House","Indie","Jazz","K-Pop","Lo-fi","Metal","Opera","Pop","R&B","Rap","Reggae","Salsa","Techno"
+  ],
+
+  "Musical Instruments (generic)": [
+    "Accordion","Bagpipes","Banjo","Bass Guitar","Cello","Clarinet","Congas","Drum Kit","Flute","French Horn",
+    "Guitar","Harmonica","Harp","Kalimba","Mandolin","Maracas","Oboe","Piano","Saxophone","Sitar","Tabla","Tambourine",
+    "Trombone","Trumpet","Ukulele","Violin","Xylophone"
+  ],
+
+  "Art Styles & Movements (generic)": [
+    "Abstract","Art Deco","Baroque","Cubism","Dadaism","Expressionism","Fauvism","Gothic","Impressionism",
+    "Minimalism","Modernism","Neoclassicism","Op Art","Pop Art","Realism","Renaissance","Romanticism","Surrealism",
+    "Symbolism","Ukiyo-e","Watercolor"
+  ],
+
+  "Famous Myths & Legends (generic)": [
+    "Atlantis","Bigfoot","Baba Yaga","Banshee","Cerberus","Chupacabra","Cyclops","Dragon","Excalibur","Gargoyle",
+    "Griffin","Hydra","Kraken","Leprechaun","Loch Ness Monster","Medusa","Minotaur","Mothman","Pegasus",
+    "Phoenix","Sasquatch","Unicorn","Vampire","Werewolf"
+  ],
+
+  "Magic & Fantasy Terms (generic)": [
+    "Alchemy","Amulet","Arcane","Astral Plane","Banish","Cauldron","Charm","Coven","Crystal Ball","Curse",
+    "Enchantment","Familiar","Grimoire","Hex","Illusion","Incantation","Mana","Potion","Runes","Spellbook","Summon","Talisman","Wand"
+  ],
+
+  "Board Game Mechanics (generic)": [
+    "Area Control","Auction","Cooperative","Deck-Building","Drafting","Engine-Building","Hidden Roles","Legacy",
+    "Modular Board","Movement Points","Push Your Luck","Roll-and-Write","Set Collection","Social Deduction",
+    "Tile Placement","Variable Player Powers","Worker Placement"
+  ],
+
+  "Book Genres (generic)": [
+    "Biography","Coming-of-Age","Cozy Mystery","Dark Fantasy","Epic Fantasy","Gothic Fiction","Historical Fiction",
+    "Horror","Literary Fiction","Magical Realism","Memoir","Mystery","Nonfiction","Psychological Thriller",
+    "Romance","Sci-Fi","Short Stories","Suspense","True Crime","Young Adult"
+  ],
+
+  "Architecture & Buildings (generic)": [
+    "Aqueduct","Arch","Basilica","Bungalow","Cathedral","Courthouse","Dome","Fortress","Gazebo","High-Rise",
+    "Lighthouse","Mansion","Monastery","Mosque","Pagoda","Palace","Pavilion","Skyscraper","Stadium","Temple","Tower","Villa"
+  ],
+
+  "Time Periods & Eras (generic)": [
+    "Ancient Egypt","Bronze Age","Classical Greece","Cold War","Dark Ages","Early Modern","Edwardian Era",
+    "Industrial Revolution","Jazz Age","Medieval Period","Modern Era","Neolithic","Renaissance","Roaring Twenties",
+    "Space Age","Stone Age","Victorian Era"
+  ],
+
+  "Countries (generic)": [
+    "Argentina","Australia","Brazil","Canada","Chile","China","Colombia","Egypt","France","Germany","Ghana",
+    "Greece","India","Indonesia","Ireland","Italy","Japan","Kenya","Mexico","Morocco","Netherlands","New Zealand",
+    "Nigeria","Norway","Pakistan","Peru","Philippines","Saudi Arabia","South Korea","Spain","Sweden","Turkey","United Kingdom","Vietnam"
+  ],
+
+  "Languages (generic)": [
+    "Arabic","Bengali","Dutch","English","French","German","Greek","Gujarati","Hebrew","Hindi","Indonesian",
+    "Italian","Japanese","Javanese","Korean","Malay","Marathi","Persian","Polish","Portuguese","Punjabi","Russian",
+    "Spanish","Swahili","Tagalog","Tamil","Telugu","Thai","Turkish","Urdu","Vietnamese"
+  ],
+
+  "Personality Archetypes (generic)": [
+    "Adventurer","Ambassador","Analyst","Architect","Artist","Caregiver","Challenger","Commander","Diplomat","Dreamer",
+    "Explorer","Guardian","Healer","Inventor","Leader","Mediator","Mentor","Perfectionist","Protector","Rebel","Scholar","Strategist","Visionary"
+  ],
+
+  "Hobbies & Pastimes (generic)": [
+    "Archery","Astronomy","Birdwatching","Calligraphy","Camping","Chess","Collecting Coins","Cooking","Cosplay",
+    "Crochet","DJing","Fishing","Gardening","Guitar Practice","Hiking","Knitting","Origami","Painting","Pottery",
+    "Scrapbooking","Stargazing","Woodworking"
+  ],
+
+  "Tools & Hardware (generic)": [
+    "Allen Wrench","Anemometer","Caliper","Chisel","Clamp","Cordless Drill","Crowbar","Flashlight","Heat Gun",
+    "Level","Measuring Tape","Multimeter","Phillips Screwdriver","Pliers","Ratchet","Soldering Iron","Stud Finder",
+    "Utility Knife","Vice Grip","Wire Stripper","Wrench"
+  ],
+
+  "Computer & Tech Terms (generic)": [
+    "API","Bandwidth","Bug Report","Cache","CLI","Cloud Storage","Container","Database","DNS","Encryption",
+    "Firewall","Framework","Git Branch","Hash","Latency","Load Balancer","OAuth","Packet","Pull Request","Query",
+    "Runtime","Token","Virtual Machine"
+  ],
+
+  "Programming Concepts (generic)": [
+    "Algorithm","Array","Asynchronous","Binary Search","Class","Closure","Compiler","Concurrency","Data Structure",
+    "Encapsulation","Exception","Heap","Interface","Iterator","Library","Linked List","Loop","Recursion","Stack",
+    "State Machine","Test Case","Type System"
+  ],
+
+  "Cybersecurity Concepts (generic)": [
+    "Access Control","Attack Surface","Brute Force","Certificate","DDoS","Digital Forensics","Exploit","Hashing",
+    "Incident Response","Least Privilege","Malware","Multi-Factor Auth","OSINT","Patch Management","Penetration Test",
+    "Phishing","Privilege Escalation","Sandboxing","SIEM","Social Engineering","Threat Model","Zero Trust"
+  ],
+
+  "Medical Anatomy (generic)": [
+    "Aorta","Appendix","Cerebellum","Diaphragm","Esophagus","Femur","Gallbladder","Heart","Hip Joint","Kidney",
+    "Larynx","Liver","Lung","Pancreas","Patella","Ribcage","Spinal Cord","Spleen","Stomach","Thyroid","Trachea"
+  ],
+
+  "Clinical & Hospital Items (generic)": [
+    "BP Cuff","Catheter","Crutches","Defibrillator","ECG Leads","Gauze","Gloves","IV Bag","IV Pump","Lancet",
+    "N95 Mask","Nebulizer","Oxygen Tank","Pulse Oximeter","Scalpel","Specimen Cup","Stethoscope","Syringe",
+    "Thermometer","Tourniquet","Walker","Wheelchair"
+  ],
+
+  "Kitchen Gear (generic)": [
+    "Air Fryer","Blender","Colander","Cutting Board","Dutch Oven","Electric Kettle","Frying Pan","Grater","Instant Pot",
+    "Knife Set","Ladle","Measuring Cups","Microwave","Mixing Bowl","Peeler","Pressure Cooker","Rolling Pin","Spatula",
+    "Stand Mixer","Strainer","Toaster","Whisk"
+  ],
+
+  "Fashion Items (generic)": [
+    "Beanie","Belt","Blazer","Boots","Cardigan","Cargo Pants","Denim Jacket","Dress Shirt","Hoodie","Loafers",
+    "Overcoat","Polo","Scarf","Sneakers","Sunglasses","Suit","Sweater Vest","Trench Coat","Turtleneck","Watch"
+  ],
+
+  "Jewelry & Accessories (generic)": [
+    "Anklet","Bangle","Bracelet","Brooch","Chain","Charm","Cufflinks","Earrings","Engagement Ring","Locket",
+    "Necklace","Nose Stud","Pendant","Signet Ring","Tie Clip","Toe Ring","Wallet Chain","Wristband"
+  ],
+
+  "Cars & Auto Terms (generic)": [
+    "ABS","Alternator","Axle","Brake Caliper","Catalytic Converter","Clutch","Coolant","Differential","Engine Mount",
+    "Fuel Injector","Head Gasket","Horsepower","Oil Filter","Radiator","Spark Plug","Suspension","Tachometer","Torque",
+    "Transmission","Turbocharger"
+  ],
+
+  "Transportation Types (generic)": [
+    "Bicycle","Cargo Ship","Cruise Ship","Electric Scooter","Ferry","Freight Train","Helicopter","Jet","Kayak",
+    "Motorcycle","Sailboat","School Bus","Subway","Taxi","Tram","Trolley","Yacht"
+  ],
+
+  "Nature Landscapes (generic)": [
+    "Badlands","Canyon","Coral Reef","Delta","Desert Oasis","Fjord","Glacier","Grassland","Hot Springs","Mangrove",
+    "Mesa","Rainforest","Savanna","Salt Flats","Tundra","Volcano","Waterfall","Wetlands"
+  ],
+
+  "Plants & Trees (generic)": [
+    "Bamboo","Banyan","Cactus","Cedar","Cherry Blossom","Cypress","Fern","Fig Tree","Lavender","Maple",
+    "Moss","Oak","Olive Tree","Palm","Pine","Rose","Sage","Sunflower","Tulip","Willow"
+  ],
+
+  "Materials & Fabrics (generic)": [
+    "Aluminum","Bamboo Fiber","Brass","Canvas","Carbon Fiber","Ceramic","Copper","Corduroy","Denim","Glass",
+    "Granite","Leather","Linen","Marble","Nylon","Polyester","Silk","Stainless Steel","Suede","Titanium","Wool"
+  ],
+
+  "Colors & Shades (generic)": [
+    "Amber","Aqua","Beige","Burgundy","Charcoal","Cobalt","Coral","Crimson","Emerald","Fuchsia","Indigo","Ivory",
+    "Lavender","Lilac","Maroon","Mustard","Navy","Olive","Peach","Periwinkle","Saffron","Teal","Turquoise"
+  ],
+
+  "Shapes & Patterns (generic)": [
+    "Chevron","Checkerboard","Concentric Circles","Diagonal Stripes","Dots","Herringbone","Honeycomb","Labyrinth",
+    "Mosaic","Paisley","Polka Dots","Quatrefoil","Spiral","Tartan","Triangular Tessellation","Zigzag"
+  ],
+
+  "Law & Courtroom Terms (generic)": [
+    "Affidavit","Appeal","Arraignment","Bail","Case Law","Deposition","Evidence","Felony","Hearing","Indictment",
+    "Injunction","Jury","Litigation","Misdemeanor","Plea Deal","Precedent","Subpoena","Testimony","Verdict","Warrant"
+  ],
+
+  "Business & Money Terms (generic)": [
+    "Assets","Budget","Cash Flow","Commission","Customer Support","Equity","Freelance","Gross Margin","Invoice",
+    "KPI","Market Share","Net Profit","Overhead","Payroll","Pitch Deck","Revenue","ROI","Stakeholder","Subscription","Venture Capital"
+  ],
+
+  "Feelings in One Word (generic)": [
+    "Amazed","Anxious","Brave","Conflicted","Curious","Determined","Dread","Eager","Guilty","Inspired","Irritated",
+    "Melancholy","Nostalgic","Overwhelmed","Relieved","Restless","Skeptical","Secure","Tense","Wistful"
+  ],
+
+  "Famous Quotes Starters (generic)": [
+    "Believe","Imagine","Remember","Never","Always","Sometimes","Today","Tomorrow","Freedom","Courage",
+    "Wisdom","Patience","Hope","Discipline","Kindness","Truth","Change","Dream","Focus","Respect"
   ]
 
 
