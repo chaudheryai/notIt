@@ -526,8 +526,154 @@
     "Subtitles on or off","Cats vs dogs",
     "Early bird vs night owl","Money splits",
     "Best rapper debate","Marvel vs DC"
-  ]
+  ],
 
+    "Colors (Generic)": [
+    "Red","Blue","Green","Yellow","Orange","Purple","Pink","Brown","Black","White",
+    "Gray","Teal","Cyan","Magenta","Maroon","Navy","Olive","Mint","Lavender","Beige",
+    "Coral","Turquoise","Indigo","Gold","Silver","Bronze","Peach","Mustard","Ivory"
+  ],
+
+  "Weather (Generic)": [
+    "Sunny","Rainy","Cloudy","Stormy","Snowy","Windy","Foggy","Humid","Dry",
+    "Thunderstorm","Lightning","Hail","Heatwave","Cold","Freezing","Breezy",
+    "Drizzle","Overcast","Misty","Icy","Blizzard","Monsoon"
+  ],
+
+  "Emotions (Generic)": [
+    "Happy","Sad","Angry","Excited","Nervous","Calm","Stressed","Relaxed",
+    "Jealous","Proud","Embarrassed","Confident","Lonely","Hopeful","Grateful",
+    "Annoyed","Overwhelmed","Motivated","Content","Anxious","Curious","Frustrated"
+  ],
+
+  "Personality Traits (Generic)": [
+    "Friendly","Shy","Outgoing","Quiet","Loud","Funny","Serious","Lazy",
+    "Energetic","Creative","Logical","Emotional","Patient","Impatient",
+    "Competitive","Chill","Reliable","Clumsy","Organized","Messy","Bold","Cautious"
+  ],
+
+  "Household Items (Generic)": [
+    "Chair","Table","Couch","Lamp","Fan","Clock","Mirror","Rug","Curtains",
+    "Trash Can","Remote","TV","Blanket","Pillow","Shelf","Door","Window",
+    "Carpet","Drawer","Cabinet","Light Switch","Doormat","Picture Frame"
+  ],
+
+  "Everyday Objects (Generic)": [
+    "Phone","Wallet","Keys","Backpack","Bottle","Notebook","Pen","Charger",
+    "Headphones","Watch","Glasses","Umbrella","Flashlight","Calculator",
+    "Scissors","Tape","Sticky Notes","Folder","Clipboard","Keychain","Coin","ID Card"
+  ],
+
+  "Clothing Items (Generic)": [
+    "T-Shirt","Hoodie","Jacket","Jeans","Sweater","Shorts","Socks","Shoes",
+    "Hat","Cap","Scarf","Gloves","Dress","Skirt","Suit","Pajamas",
+    "Coat","Rain Jacket","Tank Top","Button-Up","Sweatpants","Vest"
+  ],
+
+  "Shoes (Generic)": [
+    "Sneakers","Sandals","Boots","Slides","Dress Shoes","Running Shoes",
+    "Basketball Shoes","Cleats","Slippers","High Tops","Low Tops",
+    "Flip Flops","Work Boots","Heels","Flats"
+  ],
+
+  "Foods (Generic)": [
+    "Pizza","Burger","Sandwich","Pasta","Rice","Chicken","Steak","Fish",
+    "Salad","Soup","Fries","Noodles","Eggs","Bread","Cheese","Tacos",
+    "Wrap","Burrito","Hot Dog","Fried Rice","Mashed Potatoes","Chicken Wings"
+  ],
+
+  "Fruits (Generic)": [
+    "Apple","Banana","Orange","Grapes","Strawberry","Blueberry","Mango",
+    "Pineapple","Watermelon","Peach","Pear","Kiwi","Cherry","Lemon","Lime",
+    "Plum","Coconut","Papaya","Pomegranate","Raspberry"
+  ],
+
+  "Vegetables (Generic)": [
+    "Carrot","Broccoli","Spinach","Lettuce","Tomato","Onion","Pepper",
+    "Potato","Cucumber","Zucchini","Corn","Peas","Beans","Garlic",
+    "Cauliflower","Eggplant","Cabbage","Celery","Mushroom","Sweet Potato"
+  ],
+
+  "Drinks (Generic)": [
+    "Water","Soda","Juice","Coffee","Tea","Milk","Smoothie","Lemonade",
+    "Iced Tea","Hot Chocolate","Energy Drink","Sports Drink",
+    "Sparkling Water","Milkshake","Protein Shake","Iced Coffee"
+  ],
+
+  "Animals (Generic)": [
+    "Dog","Cat","Bird","Fish","Horse","Cow","Sheep","Goat","Pig","Chicken",
+    "Duck","Rabbit","Hamster","Turtle","Snake","Lizard","Frog","Deer","Squirrel","Raccoon"
+  ],
+
+  "Places (Generic)": [
+    "Home","School","Work","Park","Mall","Store","Restaurant","Gym",
+    "Library","Hospital","Airport","Beach","Hotel","Cafe",
+    "Playground","Office","Downtown","Neighborhood","Parking Lot","Bus Stop"
+  ],
+
+  "Transportation (Generic)": [
+    "Car","Bus","Train","Bike","Motorcycle","Scooter","Plane","Boat",
+    "Subway","Taxi","Uber","Truck","Van","Skateboard","Ferry"
+  ],
+
+  "Jobs (Generic)": [
+    "Teacher","Doctor","Nurse","Engineer","Cashier","Manager","Chef","Driver",
+    "Police Officer","Firefighter","Student","Artist","Designer","Programmer",
+    "Electrician","Plumber","Mechanic","Receptionist","Accountant","Salesperson"
+  ],
+
+  "School Subjects (Generic)": [
+    "Math","English","History","Science","Biology","Chemistry","Physics",
+    "Geography","Art","Music","PE","Computer Science",
+    "Economics","Psychology","Statistics"
+  ],
+
+  "Hobbies (Generic)": [
+    "Reading","Gaming","Cooking","Baking","Drawing","Painting","Photography",
+    "Writing","Hiking","Running","Swimming","Gardening",
+    "Cycling","Knitting","Woodworking","Yoga","Meditation"
+  ],
+
+  "Sports (Generic)": [
+    "Basketball","Soccer","Football","Baseball","Tennis","Volleyball",
+    "Golf","Hockey","Swimming","Running","Cycling",
+    "Badminton","Table Tennis","Pickleball","Wrestling"
+  ],
+
+  "Common Actions (Generic)": [
+    "Walking","Running","Sitting","Standing","Eating","Drinking",
+    "Talking","Listening","Typing","Driving","Sleeping","Stretching",
+    "Yawning","Laughing","Crying","Thinking","Waiting"
+  ],
+
+  "Times of Day (Generic)": [
+    "Morning","Afternoon","Evening","Night","Midnight","Sunrise","Sunset",
+    "Early Morning","Late Night","Noon"
+  ],
+
+  "Seasons (Generic)": [
+    "Spring","Summer","Fall","Winter"
+  ],
+
+  "Shapes (Generic)": [
+    "Circle","Square","Triangle","Rectangle","Oval","Diamond",
+    "Star","Heart","Hexagon","Octagon"
+  ],
+
+  "Textures (Generic)": [
+    "Smooth","Rough","Soft","Hard","Sticky","Slippery","Dry","Wet",
+    "Fluffy","Grainy","Bumpy","Silky"
+  ],
+
+  "Sounds (Generic)": [
+    "Loud","Quiet","Whisper","Buzz","Ring","Knock","Clap","Snap",
+    "Bang","Beep","Click","Thud","Hum","Echo"
+  ],
+
+  "Simple Adjectives (Generic)": [
+    "Big","Small","Fast","Slow","Hot","Cold","Light","Heavy",
+    "Bright","Dark","Clean","Dirty","New","Old","Soft","Hard"
+  ]
 
 
 }
