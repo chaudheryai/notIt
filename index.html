@@ -741,7 +741,7 @@
     if (!game) return;
     elAnswerArea.classList.remove('hidden');
     const uc = game.undercoverSet.map(i => (game.playerNames?.[i] || `Player ${i+1}`)).join(", ");
-    elAnswerPill.textContent = `Word: “${game.word}” • Undercover: ${uc} • Category: ${game.category}`;
+    elAnswerPill.textContent = `Word: “${game.word}” • Category: ${game.category}`;
   });
 
   elNewGame.addEventListener('click', () => {
@@ -798,3 +798,4 @@
 </script>
 </body>
 </html>
+
