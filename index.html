@@ -694,7 +694,7 @@
     try {
       game = newGameState();
       const uc = game.undercoverSet.map(i => (game.playerNames?.[i] || `Player ${i+1}`)).join(", ");
-      setStatus(`Started: ${game.players} players • ${game.category} • Undercover: ${game.undercoverSet.length} (${uc})`);
+
       elRevealArea.classList.remove('hidden');
       elVoteArea.classList.add('hidden');
       game.currentIndex = 0;
@@ -798,5 +798,6 @@
 </script>
 </body>
 </html>
+
 
 
