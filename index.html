@@ -697,7 +697,9 @@
 
       elRevealArea.classList.remove('hidden');
       elVoteArea.classList.add('hidden');
-      game.currentIndex = 0;
+      game.currentIndex = randInt(game.players);
+      setStatus(`Starting player: ${game.playerNames?.[game.currentIndex] || `Player ${game.currentIndex+1}`}`);
+    
       game.revealed = false;
       updateRevealUI();
       startTimerIfNeeded();
@@ -798,6 +800,7 @@
 </script>
 </body>
 </html>
+
 
 
 
